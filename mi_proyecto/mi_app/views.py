@@ -6,7 +6,8 @@ from django.shortcuts import render, redirect
 from .models import Libro, Autor, Editorial
 from .forms import LibroForm, AutorForm, EditorialForm
 
-# Vista para insertar libros, autores y editoriales
+# Vista para insertar libros, autores y editoriales:
+
 def insertar(request):
     if request.method == 'POST':
         if 'libro' in request.POST:
@@ -35,7 +36,9 @@ def insertar(request):
         'editorial_form': editorial_form
     })
 
-# Vista para buscar libros
+# Vista para buscar libros:
+
+
 def buscar(request):
     libros = None
     if request.method == 'GET' and 'titulo' in request.GET:
