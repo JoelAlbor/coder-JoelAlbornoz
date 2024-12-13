@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Buscar Libro</h2>
+<form method="get">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" />
+    <button type="submit">Buscar</button>
+</form>
+
+{% if libros %}
+    <ul>
+    {% for libro in libros %}
+        <li>{{ libro.titulo }} - {{ libro.autor }} - {{ libro.editorial }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
