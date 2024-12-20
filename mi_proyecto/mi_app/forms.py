@@ -6,7 +6,7 @@ from .models import Libro, Autor, Editorial
 class AutorForm(forms.ModelForm):
     class Meta:
         model = Autor
-        fields = ['nombre', 'apellido']
+        fields = ['nombre', 'apellido', 'biografia']
 
 class EditorialForm(forms.ModelForm):
     class Meta:
@@ -16,4 +16,4 @@ class EditorialForm(forms.ModelForm):
 class LibroForm(forms.ModelForm):
     class Meta:
         model = Libro
-        fields = ['titulo', 'autor', 'editorial', 'fecha_publicacion']
+        fields = ['titulo', 'autor', 'editorial', 'fecha_publicacion', 'isbn', 'descripcion']

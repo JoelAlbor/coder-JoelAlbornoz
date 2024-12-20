@@ -3,16 +3,21 @@
 {% block content %}
 <h2>Buscar Libro</h2>
 <form method="get">
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" name="titulo" />
+    <label for="titulo">Título del libro:</label>
+    <input type="text" name="titulo" id="titulo" placeholder="Buscar libro...">
     <button type="submit">Buscar</button>
 </form>
 
 {% if libros %}
+    <h3>Resultados de búsqueda:</h3>
     <ul>
-    {% for libro in libros %}
-        <li>{{ libro.titulo }} - {{ libro.autor }} - {{ libro.editorial }}</li>
-    {% endfor %}
+        {% for libro in libros %}
+            <li>{{ libro.titulo }} - {{ libro.autor }} ({{ libro.editorial }})</li>
+        {% endfor %}
     </ul>
+{% elif mensaje %}
+    <p>{{ mensaje }}</p>
 {% endif %}
+
 {% endblock %}
+

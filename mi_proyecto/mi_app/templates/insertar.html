@@ -3,6 +3,13 @@
 {% block content %}
 <h2>Insertar Datos</h2>
 
+<h3>Insertar Libro</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ libro_form.as_p }}
+    <button type="submit" name="libro">Guardar Libro</button>
+</form>
+
 <h3>Insertar Autor</h3>
 <form method="post">
     {% csrf_token %}
@@ -17,10 +24,7 @@
     <button type="submit" name="editorial">Guardar Editorial</button>
 </form>
 
-<h3>Insertar Libro</h3>
-<form method="post">
-    {% csrf_token %}
-    {{ libro_form.as_p }}
-    <button type="submit" name="libro">Guardar Libro</button>
-</form>
 {% endblock %}
+
+
+
